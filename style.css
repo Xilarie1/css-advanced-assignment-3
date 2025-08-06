@@ -27,7 +27,7 @@ img {
   animation: spin 1s linear infinite;
 }
 
-@keyframes bounce {
+/* @keyframes bounce {
   0% {
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@ img {
     top: 0;
     left: 0;
   }
-}
+} */
 
 @keyframes spin {
   from {
@@ -57,4 +57,11 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+.bounce {
+  position: absolute;
+  width: 100px; /* or your desired size */
+  height: auto;
+  top: 100px; /* initial position */
+  left: 100px;
 }

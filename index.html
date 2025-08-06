@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animations</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header></header>
@@ -18,6 +19,47 @@
           class="spin-hover"
         />
       </div>
+      <script>
+        const logo = document.querySelector(".bounce");
+        const container = document.querySelector("main");
+
+        let posX = 100;
+        let posY = 100;
+        let velocityX = 2;
+        let velocityY = 2;
+
+        const moveLogo = () => {
+          const containerWidth = container.clientWidth;
+          const containerHeight = container.clientHeight;
+          const logoWidth = logo.clientWidth;
+          const logoHeight = logo.clientHeight;
+
+          posX += velocityX;
+          posY += velocityY;
+
+          // Bounce on edges
+          if (posX + logoWidth >= containerWidth || posX <= 0) {
+            velocityX *= -1;
+
+            // Slight tweak to Y to avoid corner hit
+            velocityY += (Math.random() - 0.5) * 0.5;
+          }
+
+          if (posY + logoHeight >= containerHeight || posY <= 0) {
+            velocityY *= -1;
+
+            // Slight tweak to X to avoid corner hit
+            velocityX += (Math.random() - 0.5) * 0.5;
+          }
+
+          logo.style.left = posX + "px";
+          logo.style.top = posY + "px";
+
+          requestAnimationFrame(moveLogo);
+        };
+
+        moveLogo();
+      </script>
 
       <a href=""></a>
     </main>
