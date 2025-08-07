@@ -57,7 +57,17 @@ button:hover {
 .spin-hover {
   animation: spin 1s linear infinite;
 }
-
+a,
+a:hover,
+a:visited a:active {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  text-decoration: none;
+  color: inherit;
+  pointer-events: auto;
+  cursor: default;
+}
 /* @keyframes bounce {
   0% {
     top: 0;
