@@ -10,7 +10,9 @@
   <body>
     <header></header>
     <main>
-      <button class="regret">You will regret pressing me!:(</button>
+      <button class="regret" onclick="alert('I told you!')">
+        You will regret pressing me!:(
+      </button>
 
       <div class="bounce">
         <img
@@ -19,6 +21,7 @@
           class="spin-hover"
         />
       </div>
+      <!-- borrowed script, original keyframe for movement is commented out in css -->
       <script>
         const logo = document.querySelector(".bounce");
         const container = document.querySelector("main");
